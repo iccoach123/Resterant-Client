@@ -4,5 +4,11 @@
     <string name="app_name">Resterant-Client</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string-array name="tab_name">
+        <item >รายการอาหาร</item>
+        <item >รายการที่เลือก</item>
+        <item >รายการที่สั่งแล้ว</item>
+
+    </string-array>
 
 </resources>
