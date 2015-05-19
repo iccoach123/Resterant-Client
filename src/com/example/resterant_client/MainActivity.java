@@ -1,12 +1,15 @@
 package com.example.resterant_client;
 
 import com.example.fragment.AllListMenu;
+import com.example.fragment.SelectedMenu;
+
 
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -68,7 +71,7 @@ public class MainActivity extends Activity implements TabListener {
 
 		switch (tab.getPosition()) {
 		case 0:
-			fragment = new AllListMenu();
+			fragment = new AllListMenu(this);
 			/*args.putString("color", "#2574a9");
 			fragment.setArguments(args);*/
 			break;
@@ -81,7 +84,6 @@ public class MainActivity extends Activity implements TabListener {
 			fragment.setArguments(args);
 			break;
 		}
-
 		ft.replace(android.R.id.content, fragment);
 	}
 
@@ -89,6 +91,28 @@ public class MainActivity extends Activity implements TabListener {
 	public void onTabUnselected(Tab arg0, FragmentTransaction arg1) {
 		// TODO Auto-generated method stub
 
+	}
+	public void displayView(int position) {
+		Fragment fragment = null;
+
+		switch (position) {
+		case 0:
+			fragment = new SelectedMenu(this);
+
+			break;
+		case 1:
+
+			break;
+
+		default:
+			fragment = null;
+		}
+
+		if (fragment != null) {
+			FragmentManager fragmentManager = getFragmentManager();
+			fragmentManager.beginTransaction().addToBackStack(null)
+					.replace(android.R.id.content , fragment).commit();
+		}
 	}
 
 	public static class MyFragment extends Fragment {

@@ -1,21 +1,37 @@
 package com.example.resterant_client;
 
-import java.util.ArrayList;
 
 public class Material {
 	String name;
-	ArrayList<String> materialFood;
+	double price;
+	String detail;
+
+	public Material(){
+		
+	}
+	
+
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public ArrayList<String> getMaterialFood() {
-		return materialFood;
+	public String getDetail() {
+		return detail;
 	}
-	public void setMaterialFood(ArrayList<String> materialFood) {
-		this.materialFood = materialFood;
+	public void setDetail(String detail) {
+		this.detail = detail;
 	}
+	public double getPrice() {
+		return price;
+	}
+	
+	
 	
 }
